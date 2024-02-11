@@ -1,0 +1,497 @@
+:root {
+  font-family: var(--font-family-main);
+  --font-family-main: "Montserrat";
+  --font-family-titles: "Rock Salt";
+
+  --gap: 30px;
+  --gap-small: 15px;
+  --gap-big: 70px;
+  --gutter: 8px;
+
+  --grey: grey;
+  --grey-light: #dfdfdf;
+  --sms-self: #be6969;
+  --sms-self-send: #c7a1a1;
+  --sms-other: #e6e6e6;
+  --sms-color-self: white;
+
+  --white: rgb(255, 255, 255);
+
+  color: var(--color-main);
+  --color-main: #311f1f;
+  font-size: 1.2em;
+  line-height: 1.7em;
+}
+
+* {
+  box-sizing: border-box;
+
+  /* 
+  transition: var(--transition);
+  -webkit-transition: var(--transition);
+  -moz-transition: var(--transition);
+  -ms-transition: var(--transition);
+  -o-transition: var(--transition);
+  --transition: all 0.2s ease; */
+}
+
+img {
+}
+
+@font-face {
+  font-family: "Grandstander";
+  src: url(../assets/fonts/Grandstander/Grandstander-VariableFont_wght.ttf);
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Comic Neue";
+  src: url(../assets/fonts/Comic_Neue/ComicNeue-Bold.ttf);
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(../assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: "Rock Salt";
+  src: url(../assets/fonts/RockSalt-Regular.ttf);
+}
+
+html,
+body {
+  overflow: hidden;
+}
+
+img {
+  object-fit: cover;
+  max-height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+ul.unset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* - - - - FLEXCOLUMN AND FLEXROW - - - - */
+
+.display-none,
+.hidden {
+  display: none !important;
+}
+
+.flexrow,
+.flexcolumn {
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  gap: var(--grid-gap);
+}
+
+.flexrow.fixed {
+  --height: 200px;
+}
+
+.flexrow.fixed > * {
+  height: var(--height);
+}
+
+.flexcolumn {
+  flex-direction: column;
+}
+
+.flexcolumn.fixed {
+  height: var(--height);
+  --height: 200px;
+}
+
+.flexcolumn > * {
+  flex: 1 1 auto;
+  margin: 0 !important;
+}
+
+.flexcolumn > * {
+}
+
+.flexrow > * {
+  flex: 1;
+  margin: 0 !important;
+}
+
+.no-extend {
+  flex: 0 0 auto;
+}
+
+.flexcolumn > .no-extend {
+  height: auto;
+}
+
+.extend,
+fill {
+  flex: 1 1 auto;
+}
+
+[class*="align-"],
+[class*="flex-"] {
+  display: flex !important;
+}
+
+.align-center {
+  align-items: center !important;
+}
+
+.align-start {
+  align-items: flex-start !important;
+}
+
+.align-end {
+  align-items: flex-end !important;
+}
+
+.flex-center {
+  justify-content: center !important;
+}
+
+.flex-start {
+  justify-content: flex-start !important;
+}
+
+.flex-end {
+  justify-content: flex-end !important;
+}
+
+/*- - - - - GENERAL - - - - -*/
+
+.lowercase {
+  text-transform: lowercase !important;
+}
+
+.uppercase {
+  text-transform: uppercase !important;
+}
+
+.style-italic,
+.italic {
+  font-style: italic !important;
+}
+
+.style-normal {
+  font-style: normal !important;
+}
+
+.weight-bold,
+.bold {
+  font-weight: bold !important;
+}
+
+.weight-normal,
+.weight-normal * {
+  font-weight: normal !important;
+}
+
+.font-normal {
+  font-weight: normal !important;
+  font-style: normal !important;
+}
+
+.left-align {
+  text-align: left !important;
+}
+
+.center-align {
+  text-align: center !important;
+}
+
+.right-align {
+  text-align: right !important;
+}
+
+.justify-align {
+  text-align: justify !important;
+}
+
+.grey {
+  color: var(--grey);
+}
+
+.button {
+  border: 0;
+  background: transparent;
+  padding: var(--gutter) var(--gap-small);
+
+  color: var(--sms-self);
+  font-family: var(--font-family-titles);
+  font-size: 1.2em;
+  border-bottom: 2px solid var(--sms-self-send);
+  cursor: pointer;
+}
+
+/********* h1*/
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-family-titles);
+}
+
+h1 {
+  text-align: center;
+  color: var(--sms-self);
+  font-size: 2rem;
+  font-weight: normal;
+}
+
+/*/////////////////////////////*/
+
+.webgl {
+  position: fixed;
+  top: 0;
+  left: 0;
+  outline: none;
+  z-index: -1;
+}
+
+/* UI Buttons */
+.bodyButton {
+  width: 100vw;
+  height: 100vh;
+}
+
+.justBornButton {
+  z-index: 6;
+  width: 3%;
+  position: absolute;
+  transform: translate(30vw, 78vh);
+  cursor: pointer;
+}
+
+.babyButton {
+  z-index: 6;
+  width: 3%;
+  position: absolute;
+  transform: translate(35.5vw, 50vh);
+  cursor: pointer;
+}
+
+.childButton {
+  z-index: 6;
+  width: 3%;
+  position: absolute;
+  transform: translate(60vw, 72vh);
+  cursor: pointer;
+}
+
+.adoButton {
+  z-index: 6;
+  width: 3%;
+  position: absolute;
+  transform: translate(80vw, 55vh);
+  cursor: pointer;
+}
+
+.endButton {
+  z-index: 6;
+  width: 3%;
+  position: absolute;
+  transform: translate(50vw, 55vh);
+  cursor: pointer;
+}
+
+#overlay {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0a141c;
+  opacity: 0; /* Initial opacity set to transparent */
+  pointer-events: none;
+}
+
+.minigame-button {
+  transition: 0.4s opacity ease-in-out;
+}
+
+.button-visible {
+}
+
+.button-hidden {
+  opacity: 0;
+}
+
+.endButton {
+  transition: transform .3s ease-in-out;
+}
+
+.endButton:not(.visible) {
+  transform: scale(0);
+}
+
+/*////////////// MINIGAMES*/
+
+#MINIGAMES {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+#forPuzzle {
+  width: 30%;
+  height: 30%;
+}
+
+.gamepopup {
+  /* transform: scale(0); */
+  margin: auto;
+  transition: 1s ease-in-out;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.gamepopup.shown {
+  z-index: 100;
+}
+
+.gameslist:not(.shown) {
+  transform: scale(0);
+}
+
+.gamemain:not(.visible) {
+  transform: scale(0);
+}
+
+.gamemain {
+  transition: 0.4s ease-in-out;
+
+  width: 80vw;
+  height: 80vh;
+  position: fixed;
+  top: 10vh;
+  left: 10vw;
+  padding: var(--gap);
+  background: var(--white);
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.2);
+  border-radius: var(--gap);
+}
+
+.gamemain.plain {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+}
+
+
+/*****************gameslist**/
+
+.gameslist {
+  height: 100%;
+}
+
+/****************gameslist*/
+
+.gamesdescription:not(.shown) {
+  opacity: 0;
+}
+
+.gamedescription__card:not(.visible) {
+  margin-right: 50vh;
+  margin-top: 100vh;
+  transform: rotate(-5deg);
+}
+
+.gamedescription__card.right:not(.shown) {
+  margin-left: 50vh;
+  margin-right: unset;
+  transform: rotate(-5deg);
+}
+
+.gamesdescription {
+  width: 100%;
+  height: 100%;
+  background: #091b464f;
+  /* backdrop-filter: blur(10px); */
+}
+
+.gamedescription__card {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: var(--gap-big);
+  overflow: auto;
+  scrollbar-width: none;
+  width: 40vw;
+  height: 80vh;
+  background: url(../assets/photos/paperMain.png) 50% 50% / 100% 100%;
+  padding: var(--gap-big) var(--gap-big) var(--gap-big) 100px !important;
+  transition: 1s ease-in-out;
+  transform: rotate(0deg) !important;
+
+  position: absolute;
+  top: 10vh;
+  left: 10vh;
+  z-index: 1003;
+}
+
+.gamedescription__card.right {
+  left: unset !important;
+  right: 10vh;
+}
+
+.gamedescription > * {
+  z-index: 2010;
+}
+/* 
+.gamesdescription:before {
+  display: block;
+  content: '';
+  width: 100%;
+  height: 100%;
+  background: url(../assets/photos/grain.jpg);
+  opacity: 0.6;
+
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+} */
+
+.card-gamedescription__text {
+  color: var(--sms-color-self);
+}
+
+
+
+
+
+
+/*********************** AUDIOS */
+
+#AUDIOS {
+  position: fixed;
+  z-index: 8000;
+  top: 0;
+  right: 0;
+  border: 1px solid red;
+  width: 500px;
+  height: auto;
+  max-height: 300px;
+  overflow: auto; 
+}
